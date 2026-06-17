@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0a0e1a;
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Star field background */
+.stars-bg {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 230px 80px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 300px 200px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 350px 150px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 450px 250px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 500px 100px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 600px 300px, rgba(255,255,255,0.8), transparent);
+  background-repeat: repeat;
+  background-size: 700px 400px;
+}
+
+/* Planet glow effects */
+.earth-glow {
+  filter: drop-shadow(0 0 60px rgba(59, 130, 246, 0.6))
+          drop-shadow(0 0 120px rgba(59, 130, 246, 0.4))
+          drop-shadow(0 0 200px rgba(59, 130, 246, 0.2));
+}
+
+.mars-glow {
+  filter: drop-shadow(0 0 30px rgba(239, 68, 68, 0.4))
+          drop-shadow(0 0 60px rgba(239, 68, 68, 0.2));
+}
+
+.venus-glow {
+  filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.4))
+          drop-shadow(0 0 60px rgba(251, 191, 36, 0.2));
+}
+
+.mercury-glow {
+  filter: drop-shadow(0 0 30px rgba(156, 163, 175, 0.4))
+          drop-shadow(0 0 60px rgba(156, 163, 175, 0.2));
+}
+
+.sun-glow {
+  filter: drop-shadow(0 0 30px rgba(253, 184, 19, 0.5))
+          drop-shadow(0 0 60px rgba(253, 184, 19, 0.3));
+}
+
+.jupiter-glow {
+  filter: drop-shadow(0 0 30px rgba(201, 144, 57, 0.4))
+          drop-shadow(0 0 60px rgba(201, 144, 57, 0.2));
+}
+
+.saturn-glow {
+  filter: drop-shadow(0 0 30px rgba(210, 180, 140, 0.4))
+          drop-shadow(0 0 60px rgba(210, 180, 140, 0.2));
+}
+
+.uranus-glow {
+  filter: drop-shadow(0 0 30px rgba(79, 208, 231, 0.4))
+          drop-shadow(0 0 60px rgba(79, 208, 231, 0.2));
+}
+
+.neptune-glow {
+  filter: drop-shadow(0 0 30px rgba(62, 84, 232, 0.4))
+          drop-shadow(0 0 60px rgba(62, 84, 232, 0.2));
+}
+
+/* Button glow */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+              0 0 40px rgba(255, 255, 255, 0.1),
+              0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+/* Glass morphism nav */
+.glass-nav {
+  background: rgba(15, 22, 41, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Planet image styling - circular for side planets */
+.side-planet {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Main planet - no border radius, full image */
+.main-planet {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Login/Signup Page Additional Styles */
+/* Custom scrollbar for modal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(78, 205, 196, 0.3);
+  color: white;
+}
+
+/* Input autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #0a0e1a inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Scanline animation */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scanline {
+  animation: scanline 2s linear infinite;
+}
+
+/* Custom Scrollbar for Modals */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+/* ===== RESPONSIVE NAVBAR FIXES ===== */
+@media (max-width: 768px) {
+  .glass-nav {
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
