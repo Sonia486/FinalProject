@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 
 // ===== API URL =====
-const API_URL = "http://localhost:5000";
+const API_URL = "https://finalproject-production-76be.up.railway.app";
 
 // ===== FLOATING PARTICLES BACKGROUND =====
 function SpaceParticles() {
